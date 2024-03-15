@@ -14,7 +14,7 @@ const store = (req, res) => {
 
 const view = (req, res) => {
     connection.query({
-        sql: 'SELECT rs.identitas_siswa, rs.status, rg.question FROM role_siswa AS rs INNER JOIN role_guru AS rg ON rs.jawaban_siswa = rg.true_answer ORDER BY rg.created_at DESC'
+        sql: 'SELECT identitas_siswa FROM role_siswa ORDER BY created_at DESC LIMIT 5'
     }, _response(res))
 }
 
