@@ -6,6 +6,7 @@ const moment = require('moment-timezone')
 moment.tz.setDefault('Asia/Jakarta')
 
 const store = (req, res) => {
+    
     const {identitas_siswa} = req.body
     const created_at = moment().format()
     const image = req.file
@@ -21,6 +22,8 @@ const store = (req, res) => {
 
 
 
+
+
 const _response = (res) => {
     return (error, result) => {
         if(error) {
@@ -30,7 +33,7 @@ const _response = (res) => {
             })
         } else {
             res.send({
-                status: 'succes',
+                status: 'SUCCES',
                 response: result
             })
         }
